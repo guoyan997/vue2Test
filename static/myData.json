@@ -1,0 +1,12 @@
+{
+  "dataVal": {
+    "title": "ECharts 入门示例",
+    "val": [5, 20, 36, 10, 10, 20],
+    "code": 0
+  },
+  "opinionData": [
+    {"value": 26, "name": "学习氛围差"},
+    {"value": 31, "name": "学习氛围一般"},
+    {"value": 8, "name": "学习氛围很好"}
+  ]
+}
