@@ -7,8 +7,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: '/vueTest/',
+  // mode: 'history',
+  // base: '/vueTest/',
   routes: [
     {
       path: '/',
@@ -54,6 +54,71 @@ export default new Router({
       path: '/carousel',
       name: 'CarouselPage',
       component: resolve => require(['@/components/CarouselPage'], resolve)
+    },
+    {
+      path: '/loading',
+      name: 'LoadingPage',
+      component: resolve => require(['@/components/loading/LoadingComp'], resolve)
+    },
+    {
+      path: '/sticky',
+      name: 'StickyDemo',
+      component: resolve => require(['@/components/StickyDemo'], resolve)
+    },
+    {
+      path: '/miltHead',
+      name: 'MiltHead',
+      component: resolve => require(['@/components/MiltHeadTable'], resolve)
+    },
+    {
+      path: '/treeTable',
+      name: 'treeTable',
+      component: resolve => require(['@/components/TreeData/TreeTablePage'], resolve)
+    },
+    {
+      path: '/treeTable2',
+      name: 'treeTable2',
+      component: resolve => require(['@/components/TreeTable/index'], resolve)
+    },
+    {
+      path: '/mulit',
+      name: 'mulit',
+      component: resolve => require(['@/components/MulitHeader/Table'], resolve)
+    },
+    {
+      path: '/card',
+      name: 'card',
+      component: resolve => require(['@/components/card/CardPage'], resolve)
+    },
+    {
+      path: '/testTable',
+      name: 'testTable',
+      component: resolve => require(['@/components/card/TableTest'], resolve)
+    },
+    {
+      path: '/clist',
+      name: 'clist',
+      component: resolve => require(['@/components/CityList/index'], resolve)
+    },
+    {
+      path: '/lockTable',
+      name: 'lockTable',
+      component: resolve => require(['@/components/newTreeTable/TableLocked'], resolve)
+    },
+    {
+      path: '/myQuee',
+      name: 'myQuee',
+      component: resolve => require(['@/components/marquee/TestQuee'], resolve)
+    },
+    {
+      path: '/numCounter',
+      name: 'numCounter',
+      component: resolve => require(['@/components/NumCounter'], resolve)
+    },
+    {
+      path: '/easyTable',
+      name: 'easyTable',
+      component: resolve => require(['@/components/EasyTableTest'], resolve)
     }
   ]
 })

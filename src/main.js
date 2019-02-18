@@ -28,6 +28,32 @@ import VueFullPage from 'vue-fullpage'
 import scroll from 'vue-seamless-scroll'
 // 画廊轮播
 import Carousel3d from 'vue-carousel-3d'
+// 引入mock js
+import './mock/mock'
+// 引入吸顶插件
+// import VueSticky from 'vue-sticky'
+// Vue.directive('sticky', VueSticky)
+import Tab from 'vue-swipe-tab'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Ripple from 'vue-ripple-directive'
+import SuperMapCesium from 'vue-cesium-supermap'
+
+import 'vue-easytable/libs/themes-base/index.css'
+// 导入 table 和 分页组件
+import {VTable, VPagination} from 'vue-easytable'
+
+// 注册到全局
+Vue.component(VTable.name, VTable)
+Vue.component(VPagination.name, VPagination)
+
+Vue.directive('ripple', Ripple)
+
+Vue.use(ElementUI)
+Vue.use(VueAwesomeSwiper)
+Vue.use(Tab)
 
 Vue.use(Carousel3d)
 
@@ -42,6 +68,12 @@ Vue.use(VueQriously)
 Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueFullPage)
 Vue.use(scroll)
+
+Vue.use(SuperMapCesium, {
+  cesiumPath: '/static/Cesium'
+})
+
+Vue.prototype.$http = axios
 
 const options = {
   color: '#bffaf3',

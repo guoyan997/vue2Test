@@ -1,6 +1,7 @@
 <template>
   <div class="content">
-    <carousel-3d>
+    <carousel-3d :width="400" :height="400" :startIndex="1" :clickable="isBool"
+                 :autoplay="isBool" :autoplayTimeout="num" @onMainSlideClick="clickMain">
       <slide :index="0">
         Slide 1 Content
       </slide>
@@ -19,11 +20,19 @@ import { Carousel3d, Slide } from 'vue-carousel-3d'
 export default {
   name: '',
   data () {
-    return {}
+    return {
+      num: 1000,
+      isBool: true
+    }
   },
   components: {
     Carousel3d,
     Slide
+  },
+  methods: {
+    clickMain (val) {
+      debugger
+    }
   }
 }
 </script>

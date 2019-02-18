@@ -6,8 +6,17 @@
 </template>
 
 <script>
+import WaterMark from 'js-watermark'
 export default {
-  name: 'App'
+  name: 'App',
+  mounted () {
+    WaterMark.configure({
+      user: 'Jeffery Gou.',
+      company: 'TMDM co.',
+      time: false,
+      watermark_y_space: 100
+    })
+  }
 }
 </script>
 

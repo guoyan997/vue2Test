@@ -1,6 +1,7 @@
 /**
  * Created by guoyan on 2018/6/19.
  */
+import axios from 'axios'
 export default {
   namespaced: true,
   state: {
@@ -12,8 +13,16 @@ export default {
     }
   },
   actions: {
-    changeCreator: ({commit}) => {
+    changeCreator: ({commit}, payload) => {
+      alert(payload)
       commit('changeCreator')
+    },
+    // 从mock中获取数据
+    async getMockData ({commit}) {
+      let { data } = await axios.get('/mock/news')
+      let jsonMock = await axios.get('/mock/json')
+      console.log(data)
+      console.log(jsonMock.data)
     }
   },
   mutations: {
