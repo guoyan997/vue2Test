@@ -29,7 +29,7 @@ exports.cssLoaders = function (options) {
     }
   }
   // 这里是配置flexible框架后，需要设置的px和rem的转化关系，这里75标示1rem = 75px
-  var px2remLoader = {
+  const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
       remUnit: 75 // 设计稿宽度/10

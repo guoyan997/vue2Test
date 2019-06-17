@@ -119,6 +119,46 @@ export default new Router({
       path: '/easyTable',
       name: 'easyTable',
       component: resolve => require(['@/components/EasyTableTest'], resolve)
+    },
+    {
+      path: '/baiduMap',
+      name: 'baiduMap',
+      component: resolve => require(['@/components/BaiduMapComp'], resolve)
+    },
+    {
+      path: '/needTable',
+      name: 'needTable',
+      component: resolve => require(['@/components/NeedTable'], resolve)
+    },
+    {
+      path: '/vant',
+      name: 'vant',
+      component: resolve => require(['@/components/vant/VantTest'], resolve)
+    },
+    {
+      path: '/video',
+      name: 'video',
+      component: resolve => require(['@/components/video/video'], resolve)
+    },
+    {
+      path: '/scss',
+      name: 'scss',
+      component: resolve => require(['@/components/ScssTest'], resolve)
+    },
+    {
+      path: '/refreshList',
+      name: 'refreshList',
+      component: resolve => require(['@/components/RefreshList'], resolve)
+    },
+    {
+      path: '/cssIndicator',
+      name: 'cssIndicator',
+      component: resolve => require(['@/components/CssIndicator'], resolve)
+    },
+    {
+      path: '/skeleton',
+      name: 'skeleton',
+      component: resolve => require(['@/components/Skeleton'], resolve)
     }
   ]
 })

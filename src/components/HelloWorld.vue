@@ -33,7 +33,7 @@
       <sm-viewer @ready=ready navigation fullscreenButton>
       </sm-viewer>
     </div>
-
+    <p v-for="(item, i) in list2" :key="i">{{ item.value }}</p>
   </div>
 </template>
 
@@ -66,7 +66,12 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         }
-      }
+      },
+      // vue不会对list里的object做getter、setter绑定
+      list2: Object.freeze([
+        { value: 1 },
+        { value: 2 }
+      ])
     }
   },
   component: {
@@ -106,6 +111,18 @@ export default {
     rythm.addRythm('test', 'shake', 500, 100, {direction: 'left', min: 20, max: 300})
     rythm.setMusic('../assets/rythmC.mp3')
     rythm.start()
+
+    // 界面不会有响应
+    this.list2[0].value = 100
+    // 下面两种做法，界面都会响应
+    // this.list2 = [
+    //   { value: 100 },
+    //   { value: 200 }
+    // ]
+    // this.list2 = Object.freeze([
+    //   { value: 100 },
+    //   { value: 200 }
+    // ])
   }
 }
 </script>

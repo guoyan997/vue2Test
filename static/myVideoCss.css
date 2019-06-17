@@ -1,0 +1,24 @@
+.video-player vjs-custom-skin {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.video-js .vjs-tech {
+  width: 400px;
+  height: 400px;
+}
+.video-js .vjs-icon-placeholder {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.video-js .vjs-big-play-button{
+  height: 2em !important;
+  width: 2em !important;
+  line-height: 2em !important;
+  border-radius: 1em !important;
+}
+.video-js .vjs-poster {
+  width: 400px;
+  height: 400px;
+}

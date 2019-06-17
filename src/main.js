@@ -45,6 +45,48 @@ import 'vue-easytable/libs/themes-base/index.css'
 // 导入 table 和 分页组件
 import {VTable, VPagination} from 'vue-easytable'
 
+// 导入百度地图
+import BaiduMap from 'vue-baidu-map'
+
+import { Button, Row, Col, Field, Cell, CellGroup, Notify, PullRefresh, Toast, List } from 'vant'
+import { message, Skeleton } from 'ant-design-vue'
+// 引入视频播放组件
+import VideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
+import '../static/myVideoCss.css'
+import VueScrollIndicator from 'vue-scroll-indicator'
+// 引入nprogress
+import NProgress from 'nprogress' // 进度条
+import 'nprogress/nprogress.css' // 这个样式必须引入
+// 图片懒加载组件
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload)
+// 自定义图片懒加载的一些属性
+// Vue.use(VueLazyload, {
+//   preLoad: 1.3,
+//   error: 'dist/error.png',
+//   loading: 'dist/loading.gif',
+//   attempt: 1
+// })
+// 简单配置
+NProgress.inc(0.2)
+NProgress.configure({ easing: 'ease', speed: 500, showSpinner: false })
+Vue.use(NProgress)
+
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
+})
+
+// 滚动指示器
+Vue.use(VueScrollIndicator)
+Vue.use(VideoPlayer)
+
+Vue.use(message).use(Skeleton)
 // 注册到全局
 Vue.component(VTable.name, VTable)
 Vue.component(VPagination.name, VPagination)
@@ -69,10 +111,15 @@ Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueFullPage)
 Vue.use(scroll)
 
+Vue.use(Button).use(Row).use(Col).use(Field).use(Cell).use(CellGroup).use(Notify).use(PullRefresh).use(Toast).use(List)
+
 Vue.use(SuperMapCesium, {
   cesiumPath: '/static/Cesium'
 })
-
+// 全局注册地图
+Vue.use(BaiduMap, {
+  ak: 'ZY3qOpUzlD9FWaEm6CeC9QRH'
+})
 Vue.prototype.$http = axios
 
 const options = {

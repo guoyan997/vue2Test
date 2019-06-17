@@ -1,0 +1,25 @@
+// 定义了两个变量
+$font-stack: Helvetica, sans-serif;
+$primary-color: #ff0000;
+
+// 这个像函数一样，可以根据参数返回需要的样式
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -ms-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+
+// 这段代码不会被输出到最终生成的CSS文件，因为它没有被任何代码所继承。
+%other-styles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// 下面代码会正常输出到生成的CSS文件，因为它被其接下来的代码所继承。
+%message-common {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
