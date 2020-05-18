@@ -159,6 +159,98 @@ export default new Router({
       path: '/skeleton',
       name: 'skeleton',
       component: resolve => require(['@/components/Skeleton'], resolve)
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: resolve => require(['@/components/ProvinceMap/ProvinceMap'], resolve)
+    },
+    {
+      path: '/dad',
+      redirect: '/dad/a',
+      component: resolve => require(['@/components/rounterDemo/mainRounter'], resolve),
+      children: [
+        {
+          path: 'a',
+          name: 'BrandA',
+          component: resolve => require(['@/components/rounterDemo/pageA'], resolve)
+        },
+        {
+          path: 'b',
+          name: 'BrandB',
+          component: resolve => require(['@/components/rounterDemo/pageB'], resolve)
+        }
+      ]
+    },
+    {
+      path: '/svg',
+      name: 'svg',
+      component: resolve => require(['@/components/svg/svg'], resolve)
+    },
+    {
+      path: '/pdf',
+      name: 'pdf',
+      component: resolve => require(['@/components/pdf/pdf'], resolve)
+    },
+    {
+      path: '/pdf2',
+      name: 'pdf2',
+      component: resolve => require(['@/components/pdf/pdf2'], resolve)
+    },
+    {
+      path: '/bigTable',
+      name: 'bigTable',
+      component: resolve => require(['@/components/bigTable'], resolve)
+    },
+    {
+      path: '/downLoad',
+      name: 'downLoad',
+      component: resolve => require(['@/components/downLoad'], resolve)
+    },
+    {
+      path: '/svgMap',
+      name: 'svgMap',
+      component: resolve => require(['@/components/svgMap/Map.vue'], resolve)
+    },
+    {
+      path: '/lottie',
+      name: 'lottie',
+      component: resolve => require(['@/components/Lottie/Lottie.vue'], resolve)
+    },
+    {
+      path: '/lottie2',
+      name: 'lottie2',
+      component: resolve => require(['@/components/Lottie/Lottie2.vue'], resolve)
+    },
+    {
+      path: '/dfmTable',
+      name: 'dfmTable',
+      component: resolve => require(['@/components/dfmTable/DfmTable.vue'], resolve)
+    },
+    {
+      path: '/ksjc',
+      name: 'ksjc',
+      component: resolve => require(['@/components/keShiJianTing/FartherComp.vue'], resolve)
+    },
+    {
+      path: '/domToImg',
+      name: 'domToImg',
+      component: resolve => require(['@/components/domToImage/domToImage.vue'], resolve)
+    },
+    {
+      path: '/scroll',
+      name: 'scroll',
+      component: resolve => require(['@/components/scroll/scroll.vue'], resolve)
+    },
+    {
+      path: '/scrollText',
+      name: 'scrollText',
+      component: resolve => require(['@/components/scrollText/scrollText.vue'], resolve)
+    },
+    {
+      path: '/skrollr',
+      name: 'skrollr',
+      component: resolve => require(['@/components/skrollr/index.vue'], resolve)
     }
   ]
 })

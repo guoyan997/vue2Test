@@ -45,6 +45,14 @@
     </van-list>
   </div>
   <a-skeleton />
+  <div class="date-selected-content" >
+    <van-datetime-picker
+      v-model="dateStr"
+      type="date"
+      :min-date="minDate"
+      :max-date="maxDate"
+    />
+  </div>
 </div>
 </template>
 
@@ -60,7 +68,10 @@ export default {
       count: 0,
       loading: false,
       finished: false,
-      list: []
+      list: [],
+      minDate: new Date(2017, 1, 1),
+      maxDate: new Date(2019, 10, 1),
+      dateStr: new Date()
     }
   },
   methods: {
@@ -104,6 +115,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../../assets/scss/rem";
   .vant-test-content {
     .btn-content {
       .van-button {
@@ -119,6 +131,58 @@ export default {
       height: 300px;
       background-color: #66ccee;
       overflow-y: auto;
+    }
+  }
+  .date-selected-content {
+    width: 100%;
+    height: px2rem(400);
+    background-color: #fff000;
+    /deep/
+    .van-picker {
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-text-size-adjust: 100%;
+      background-color: #fff;
+      .van-picker__toolbar {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        height: px2rem(60);
+        line-height: px2rem(60);
+        button {
+          font-size: px2rem(24);
+        }
+      }
+      .van-picker__columns {
+        // height: px2rem(320) !important;
+        .van-picker-column {
+          // height: px2rem(320) !important;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
+          overflow: hidden;
+          font-size: px2rem(24);
+          text-align: center;
+          .van-picker-column__wrapper {
+            line-height: px2rem(44)!important;
+            .van-ellipsis{
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              height: px2rem(44)!important;
+              line-height: px2rem(44)!important;
+            }
+          }
+        }
+        .van-hairline-unset--top-bottom {
+          height: px2rem(44)!important;
+          background-color: #cccccc;
+        }
+      }
     }
   }
 

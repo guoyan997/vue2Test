@@ -24,10 +24,13 @@ export default {
   },
   methods: {
     notifyMe (title, options) {
+      console.log('**********' + window.Notification)
+      debugger
       // 先检查浏览器是否支持
       if (!window.Notification) {
         console.log('浏览器不支持通知')
       } else {
+        console.log('通知权限的类型' + Notification.permission)
         // 检查用户曾经是否同意接受通知
         if (Notification.permission === 'granted') {
           const notification = new Notification(title, options) // 显示通知
@@ -35,7 +38,6 @@ export default {
         } else if (Notification.permission === 'default') {
           // 用户还未选择，可以询问用户是否同意发送通知
           Notification.requestPermission().then(permission => {
-            debugger
             if (permission === 'granted') {
               console.log('用户同意授权')
               const notification = new Notification(title, options) // 显示通知

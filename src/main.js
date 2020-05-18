@@ -48,7 +48,7 @@ import {VTable, VPagination} from 'vue-easytable'
 // 导入百度地图
 import BaiduMap from 'vue-baidu-map'
 
-import { Button, Row, Col, Field, Cell, CellGroup, Notify, PullRefresh, Toast, List } from 'vant'
+import { Button, Row, Col, Field, Cell, CellGroup, Notify, PullRefresh, Toast, List, DatetimePicker } from 'vant'
 import { message, Skeleton } from 'ant-design-vue'
 // 引入视频播放组件
 import VideoPlayer from 'vue-video-player'
@@ -60,6 +60,17 @@ import NProgress from 'nprogress' // 进度条
 import 'nprogress/nprogress.css' // 这个样式必须引入
 // 图片懒加载组件
 import VueLazyload from 'vue-lazyload'
+import SlideVerify from 'vue-monoplasty-slide-verify'
+
+import lottie from 'vue-lottie'
+// 引入自定义组件库
+import MCUI from 'mc-ui-libs'
+Vue.use(MCUI)
+
+Vue.component('lottie', lottie)
+
+Vue.use(SlideVerify)
+// 引入snapsvg
 Vue.use(VueLazyload)
 // 自定义图片懒加载的一些属性
 // Vue.use(VueLazyload, {
@@ -111,7 +122,7 @@ Vue.use(VueTouch, {name: 'v-touch'})
 Vue.use(VueFullPage)
 Vue.use(scroll)
 
-Vue.use(Button).use(Row).use(Col).use(Field).use(Cell).use(CellGroup).use(Notify).use(PullRefresh).use(Toast).use(List)
+Vue.use(Button).use(Row).use(Col).use(Field).use(Cell).use(CellGroup).use(Notify).use(PullRefresh).use(Toast).use(List).use(DatetimePicker)
 
 Vue.use(SuperMapCesium, {
   cesiumPath: '/static/Cesium'

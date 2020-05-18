@@ -181,4 +181,8 @@ export default {
     background-color: aquamarine;
     border: 1px solid;
   }
+  .charts {
+    width: 400px;
+    height: 500px;
+  }
 </style>

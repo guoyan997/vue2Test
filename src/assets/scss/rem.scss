@@ -1,0 +1,29 @@
+$design_height: 2016;
+$design_width: 750;
+$fontsize_root: $design_width / 10;
+
+$design_width_hor: 1334;
+$fontsize_root_hor: $design_width_hor / 10;
+
+@function px2rem($px) {
+  @return $px / $fontsize_root * 1rem;
+}
+
+@function rem2px ($rem) {
+  @return $rem * $fontsize_root * 1px;
+}
+
+@function px2vh ($px) {
+  @return $px / $design_height * 100vh;
+}
+
+@function px2vw ($px) {
+  @return $px / $design_width * 100vw;
+}
+
+@function px2rem_hor($px) {
+  @return $px / $fontsize_root_hor * 1rem;
+}
+@function rem2px_hor ($rem) {
+  @return $rem * $fontsize_root_hor * 1px;
+}

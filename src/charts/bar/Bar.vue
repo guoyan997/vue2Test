@@ -7,6 +7,9 @@
       <div>{{code}}</div>
       <button @click="changeTest">改变测试</button>
     </div>
+    <div class="chart-div">
+      <MCBar></MCBar>
+    </div>
   </div>
 </template>
 <script>
