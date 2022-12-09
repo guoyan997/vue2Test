@@ -35,7 +35,7 @@
     "notification-koro1": "^1.1.1",
     "nprogress": "^0.2.0",
     "proton-engine": "^4.1.0",
-    "qs": "^6.8.0",
+    "qs": "^6.8.3",
     "raphael": "^2.3.0",
     "rythm.js": "^2.2.3",
     "snapsvg": "^0.5.1",
